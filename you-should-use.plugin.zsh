@@ -9,8 +9,8 @@ else
     NONE="$(tput sgr0)"
     BOLD="$(tput bold)"
     RED="$(tput setaf 1)"
-    YELLOW="$(tput setaf 3)"
-    PURPLE="$(tput setaf 5)"
+    PRIMARY="$(tput setaf 4)"
+    SECONDARY="$(tput setaf 7)"
 fi
 
 function check_alias_usage() {
@@ -89,9 +89,9 @@ function _flush_ysu_buffer() {
 }
 
 function ysu_message() {
-    local DEFAULT_MESSAGE_FORMAT="${BOLD}${YELLOW}\
-Found existing %alias_type for ${PURPLE}\"%command\"${YELLOW}. \
-You should use: ${PURPLE}\"%alias\"${NONE}"
+    local DEFAULT_MESSAGE_FORMAT="${BOLD}${PRIMARY}\
+Found existing %alias_type for ${SECONDARY}\"%command\"${PRIMARY}. \
+You should use: ${SECONDARY}\"%alias\"${NONE}"
 
     local alias_type_arg="${1}"
     local command_arg="${2}"
